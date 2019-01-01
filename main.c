@@ -27,7 +27,7 @@ void led_write(bool on)
 }
 
 void identify_task(void *_args) {
-    // We identify the Sonoff by Flashing it's LED.
+
     for (int i=0; i<3; i++) {
         for (int j=0; j<3; j++) {
             led_write(true);
