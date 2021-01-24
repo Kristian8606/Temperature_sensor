@@ -152,9 +152,9 @@ void temperature_sensor_init() {
 	    i2c_init(i2c_bus, scl_pin, sda_pin, I2C_FREQ_400K);
 
 #ifdef MODE_FORCED
-    xTaskCreate(bmp280_task_forced, "bmp280_task", 256, NULL, 2, NULL);
+    xTaskCreate(bmp280_task_forced, "bmp280_task", 512, NULL, 2, NULL);
 #else
-    xTaskCreate(bmp280_task_normal, "bmp280_task", 256, NULL, 2, NULL);
+    xTaskCreate(bmp280_task_normal, "bmp280_task", 512, NULL, 2, NULL);
 #endif
 
 	 gpio_enable(LED_GPIO, GPIO_OUTPUT);
